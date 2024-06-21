@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+/**
+ * 运行配置：List_Node
+ * 链表实现线性表
+ * wswsl23 2024.06.21
+ */
 
 typedef int ElemType;
 

@@ -1,5 +1,5 @@
-#ifndef LEARNING_2_4_线性表_顺序_H
-#define LEARNING_2_4_线性表_顺序_H
+#ifndef LEARNING_2_4_数组实现_H
+#define LEARNING_2_4_数组实现_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -142,4 +142,4 @@ void Print_Sq(struct Sqlist L){
 
 }
 
-#endif //LEARNING_2_4_线性表_顺序_H
+#endif //LEARNING_2_4_数组实现_H

@@ -1,5 +1,5 @@
 #include <assert.h>
-#include "2.4_线性表_顺序.h"
+#include "2.4_数组实现.h"
 
 /**
  * 运行配置：List_order
