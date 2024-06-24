@@ -13,7 +13,12 @@ add_executable(Test_Polynomial Session2_List/2.4_数组实现.h
 add_executable(List_Node Session2_List/2.5.0_链表.c)
 add_executable(Dul_Node Session2_List/2.5.4_双向链表.c)
 
-add_executable(Stack Session3_Stack/3.3.2_栈的顺序表示.c)
-add_executable(Calculator Session3_Stack/练习_2_算式.c
-        Session3_Stack/3.3.3_链栈.h)
+add_executable(Stack Session3_Stack_Queue/3.3.2_栈的顺序表示.c)
+add_executable(Calculator Session3_Stack_Queue/练习_2_算式.c
+        Session3_Stack_Queue/3.3.3_链栈.h)
+
+add_executable(Queue Session3_Stack_Queue/3.5.2_数组队列.c)
+add_executable(Queue_Node Session3_Stack_Queue/3.5.3_链表队列.c)
+
+add_executable(KMP Session4_String/4.3_KMP.c)
 
