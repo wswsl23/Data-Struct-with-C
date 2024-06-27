@@ -18,7 +18,10 @@ add_executable(Calculator Session3_Stack_Queue/练习_2_算式.c
         Session3_Stack_Queue/3.3.3_链栈.h)
 
 add_executable(Queue Session3_Stack_Queue/3.5.2_数组队列.c)
-add_executable(Queue_Node Session3_Stack_Queue/3.5.3_链表队列.c)
 
-add_executable(KMP Session4_String/4.3_KMP.c)
+add_executable(KMP Session4_KMP/4.3_KMP_病毒.c)
+
+add_executable(BinaryTree Session5_Tree/5.4_二叉树的实现.c
+        Session3_Stack_Queue/3.3.3_链栈.h
+        Session3_Stack_Queue/3.5.3_链表队列.h)
 

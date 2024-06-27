@@ -4,7 +4,7 @@
 #include <string.h>
 /**
  * 运行配置：KMP
- * KMP的实现
+ * KMP的实现+病毒检测案例
  * 数组从0开始的，不是非常确定结果的正确性，可能有bug存在
  * wswsl23 2024.06.24
  */
@@ -66,16 +66,38 @@ int Index_KMP(char *s1,char *s2){
             j = next[j]-1;
         }
     }
-
     if (j>=n2)
         return i-n2;
     return -1;
 }
 
+int IsInfect(char *human,char *virus){
+    int n = (int)strlen(virus);
+    char tmp[2*n+1],v[n+1],*p=tmp;
+    strcpy(tmp,virus);
+    strcat(tmp,virus);
+
+    for (int i=0;i<n;i++){
+        // 生成病毒可能的字符串
+        strncpy(v,p++,n);
+        v[n]='\0';
+        if (Index_KMP(human,v)!=-1)
+            return 1;
+    }
+
+    return 0;
+}
+
 int main(){
-    char *s1="aabaabec",*s2="aabe";
-    assert(Index_KMP(s1,s2)==3);
-    s2="aab";
-    assert(Index_KMP(s1,s2)==0);
+    assert(1==IsInfect("bbaabbba","baa"));
+    assert(1==IsInfect("aaabbbba","baa"));
+    assert(1==IsInfect("abceaabb","aabb"));
+    assert(1==IsInfect("abaabcea","aabb"));
+    assert(1==IsInfect("cdabbbab","abcd"));
+    assert(0==IsInfect("cabbbbab","abcd"));
+    assert(0==IsInfect("bcdedbda","abcde"));
+    assert(0==IsInfect("bdedbcda","acc"));
+    assert(1==IsInfect("cdcdcdec","cde"));
+    assert(1==IsInfect("cdccdcce","cced"));
     return 0;
 }

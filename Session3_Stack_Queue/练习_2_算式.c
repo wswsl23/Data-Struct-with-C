@@ -4,6 +4,7 @@
 #include <string.h>
 #include <math.h>
 
+typedef int Elemtype;
 #include "3.3.3_链栈.h"
 
 /**

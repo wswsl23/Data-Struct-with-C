@@ -2,12 +2,11 @@
 #include <assert.h>
 
 /**
- * 运行配置：Queue_Node
  * 使用链表表示队列
  * wswsl23 2024.06.24
  */
 
-typedef int Elemtype;
+// typedef int Elemtype;
 
 // 单个节点
 typedef struct Qnode{
@@ -23,7 +22,7 @@ typedef struct {
 
 // 初始化
 int InitQueue(LinkQueue *Q){
-    Q->front=Q->rear = (QuenePtr)malloc(sizeof(struct Qnode));
+    Q->front= Q->rear = (QuenePtr)malloc(sizeof(struct Qnode));
     if (!Q->front)
         return 0;
     Q->front->next=NULL;
@@ -81,29 +80,6 @@ int QueueLength(LinkQueue Q){
         n++;
     }
     return n;
-}
-
-void test(){
-    LinkQueue Q;
-    // 初始化
-    assert(InitQueue(&Q));
-    // 入队
-    assert(EnQueue(&Q,2));
-    assert(EnQueue(&Q,5));
-    assert(EnQueue(&Q,17));
-    // 队头 长度
-    assert(GetHead(Q)==2);
-    assert(QueueLength(Q)==3);
-    // 出队
-    int n;
-    assert(DeQueue(&Q,&n));
-    assert(n==2);
-    assert(QueueLength(Q)==2);
-}
-
-int main(){
-    test();
-    return 0;
 }
 
 

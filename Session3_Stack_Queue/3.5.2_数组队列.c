@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <assert.h>
+
 #define MAXQSIZE 100
 /**
  * 运行配置：Queue

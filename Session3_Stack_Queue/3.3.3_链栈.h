@@ -8,7 +8,7 @@
  */
 
 
-typedef int Elemtype;
+// typedef int Elemtype;
 
 typedef struct Stack_N{
     Elemtype data;
