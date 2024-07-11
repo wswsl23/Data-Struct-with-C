@@ -6,7 +6,7 @@
  * 运行配置 BinaryTree
  * 二叉树的实现，包含：
  *  先序递归遍历；中序非递归遍历；层次遍历；层次建立树
- * wswsl23 2024.06.27
+ * wswsl23 2024.07.09
  */
 
 // 树的结构定义
@@ -107,16 +107,58 @@ int CreateTree(TreeNode *root,int data[],int n){
     return 1;
 }
 
+int CopyTree(TreeNode r,TreeNode *newr){
+    if (!r){
+        newr = NULL;
+        return 0;
+    }
+    InitTree(newr);
+    (*newr)->data = r->data;
+    CopyTree(r->left,&(*newr)->left);
+    CopyTree(r->right,&(*newr)->right);
+    return 1;
+}
+
+int Depth(TreeNode root){
+    if (!root)
+        return 0;
+    int l,r;
+    l = Depth(root->left)+1;
+    r = Depth(root->right)+1;
+    if (l>r)
+        return l;
+    return r;
+}
+
+int NodeCount(TreeNode root){
+    if (!root)
+        return 0;
+    return NodeCount(root->left)+ NodeCount(root->right)+1;
+}
+
 void test(){
     TreeNode root;
     int data[]={1,2,3,4,-1,5,-1,6,7,8,-1};
+    // 生成树
     assert(InitTree(&root));
     assert(CreateTree(&root,data,11));
+    // 遍历树
     PreRecursion(root);  // 1 2 4 6 7 3 5 8
     printf("\n");
     InorderTraverse(root); // 6 4 7 2 1 8 5 3
     LevelOrder(root); // 1 2 3 4 5 6 7 8
+
+    // 复制树
+    TreeNode new_root;
+    CopyTree(root,&new_root);
+    PreRecursion(new_root); // 1 2 4 6 7 3 5 8
+
+    // 深度，节点数
+    assert(Depth(root)==4);
+    assert(NodeCount(root)==8);
 }
+
+
 
 int main(){
     test();
