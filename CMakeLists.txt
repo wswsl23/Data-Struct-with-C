@@ -26,3 +26,6 @@ add_executable(BinaryTree Session5_Tree/5.4_二叉树的实现.c
         Session3_Stack_Queue/3.5.3_链表队列.h)
 
 add_executable(Huffman Session5_Tree/5.7_哈夫曼树.c)
+
+add_executable(AMGraph Session6_Graph/6.4.1_邻接矩阵.c)
+add_executable(ALGraph Session6_Graph/6.4.2_ALG.c)
